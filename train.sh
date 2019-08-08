@@ -1,5 +1,6 @@
 #!/bin/bash
 cd swarmnet
+git checkout tf1.12
 git pull
 
 
@@ -15,7 +16,7 @@ BATCH_SIZE=${1:-1024}
 PRED_STEPS=( 1 3 5 10 )
 EPOCHS=( 10 10 5 3 3 )
 BATCH_SIZES=( $BATCH_SIZE $(($BATCH_SIZE / 2)) $(($BATCH_SIZE / 4)) $(($BATCH_SIZE / 8)) $(($BATCH_SIZE / 16)) )
-DATA_SETS=( "3_0" "5_0" "7_0") 
+DATA_SETS=( "3_0" "5_0" "10_0") 
 
 for ((i=0;i<${#PRED_STEPS[@]};i++)); do
     for data_set in ${DATA_SETS[@]}; do

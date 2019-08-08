@@ -1,6 +1,5 @@
 #!/bin/bash
 cd swarmnet
-git checkout tf1.12
 git pull
 
 

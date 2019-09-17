@@ -1,5 +1,6 @@
 {
     "edge_type": 4,
+    "skip_zero": true,
     "cnn": {
         "filters": [
             64,
@@ -11,30 +12,30 @@
         "hidden_units": [
             512,
             512,
-            256
-        ],
-        "dropout": 0.0,
-        "batch_norm": false,
-	"kernel_l2": 0.001
-    },
-    "node_encoder": {
-        "hidden_units": [          
             256,
             256
         ],
         "dropout": 0.0,
         "batch_norm": false,
-	"kernel_l2": 0.001
+        "kernel_l2": 0.001
     },
-    "node_decoder": {
+    "node_encoder": {
         "hidden_units": [
-	    512,
             256
         ],
         "dropout": 0.0,
         "batch_norm": false,
-	"kernel_l2": 0.001
+        "kernel_l2": 0.001
     },
-    "learning_rate": 0.0005,
-    "skip_zero": true
+    "node_decoder": {
+        "hidden_units": [
+            512,
+            256
+        ],
+        "dropout": 0.0,
+        "batch_norm": false,
+        "kernel_l2": 0.001
+    },
+    "learning_rate": 0.001,
+    "lambda": 0.0
 }

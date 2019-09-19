@@ -15,7 +15,7 @@ batch_size=1000
 
 for boid in "${train_boids[@]}"; do
     echo "Generating training data for boids=$boid"
-    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/boid/${boid}_0 --boid=$boid --instances=10000 --prefix=train
+    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/boid/${boid}_0 --boid=$boid --instances=50000 --prefix=train
 done
 
 # Copy 5_0 and 10_0 files to make a mixed set.

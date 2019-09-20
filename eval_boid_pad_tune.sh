@@ -4,11 +4,11 @@ BATCH_SIZE=${1:-512}
 ID=${2:-""}
 
 CONFIG=../config_edge.json 
-LOG_DIR=../logs/boid/5_10_0/edge_skip$ID
+LOG_DIR=../logs/boid/5_10_tune/edge_skip$ID
 DATA_DIR=../data/boid/
 
 
-DATA_SETS=( "3_0" "5_0" "7_0" "10_0" "20_0") 
+DATA_SETS=( "3_0" "5_0" "7_0" "10_0" "20_0" "40_0") 
 
 for ((i=0;i<${#DATA_SETS[@]};i++)); do
     data_set=${DATA_SETS[$i]}

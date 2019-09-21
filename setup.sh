@@ -16,7 +16,7 @@ batch_size=1000
 
 for boid in "${train_boids[@]}"; do
     echo "Generating training data for boids=$boid"
-    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/boid/${boid}_0 --boid=$boid --instances=50000 --prefix=train
+    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/boid/${boid}_0 --boid=$boid --instances=10 --prefix=train
 done
 
 # Copy 5_0 and 10_0 files to make a mixed set.
@@ -34,7 +34,7 @@ done
 valid_boids=( 3 5 7 10 20 40)
 for boid in "${valid_boids[@]}"; do
     echo "Generating validation data for boids=$boid"
-    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/boid/${boid}_0 --boids=$boid --instances=1000 --prefix=valid
+    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/boid/${boid}_0 --boids=$boid --instances=1 --prefix=valid
 done
 
 
@@ -45,7 +45,7 @@ batch_size=1000
 
 for vicsek in "${train_vicsek[@]}"; do
     echo "Generating training data for vicsek=$vicsek"
-    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/vicsek/${vicsek}_0 --vicseks=$vicsek --instances=50000 --prefix=train
+    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/vicsek/${vicsek}_0 --boids=0 --vicseks=$vicsek --instances=10 --prefix=train
 done
 
 # Copy 5_0 and 10_0 files to make a mixed set.
@@ -63,7 +63,7 @@ done
 valid_vicseks=( 3 5 7 10 20 40)
 for vicsek in "${valid_vicseks[@]}"; do
     echo "Generating validation data for vicseks=$vicsek"
-    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/vicsek/${vicsek}_0 --vicseks=$vicsek --instances=1000 --prefix=valid
+    python3 obstacle_avoidance_sim.py --processes=$processes --batch-size=$batch_size --obstacles=0 --steps=60 --dt=0.3 --save-dir=../data/vicsek/${vicsek}_0 --boids=0 --vicseks=$vicsek --instances=1 --prefix=valid
 done
 
 cd ..

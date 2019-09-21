@@ -2,7 +2,7 @@
 cd swarmnet
 git pull
 
-BATCH_SIZE=${1:-1024}
+BATCH_SIZE=1024
 ID=${2:-""}
 
 CONFIG=../config_edge.json 

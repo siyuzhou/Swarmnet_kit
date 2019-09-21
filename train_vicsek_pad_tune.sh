@@ -2,8 +2,8 @@
 cd swarmnet
 git pull
 
-BATCH_SIZE=${1:-1024}
-ID=${2:-""}
+BATCH_SIZE=1024
+ID=${1:-""}
 
 CONFIG=../config_edge.json 
 LOG_DIR=../logs/vicsek/5_10_tune/edge_skip$ID

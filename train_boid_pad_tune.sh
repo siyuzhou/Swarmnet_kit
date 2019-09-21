@@ -3,7 +3,7 @@ cd swarmnet
 git pull
 
 BATCH_SIZE=1024
-ID=${2:-""}
+ID=${1:-""}
 
 CONFIG=../config_edge.json 
 LOG_DIR=../logs/boid/5_10_tune/edge_skip$ID

@@ -12,7 +12,6 @@
         "hidden_units": [
             512,
             512,
-            256,
             256
         ],
         "dropout": 0.0,
@@ -21,6 +20,7 @@
     },
     "node_encoder": {
         "hidden_units": [
+            256,
             256
         ],
         "dropout": 0.0,
@@ -37,5 +37,5 @@
         "kernel_l2": 0.001
     },
     "learning_rate": 0.001,
-    "lambda": 0.0
+    "lambda": 1.0
 }

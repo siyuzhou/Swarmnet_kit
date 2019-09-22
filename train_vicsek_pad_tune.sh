@@ -20,6 +20,7 @@ DATA_SET=5_0
 
 for ((i=0;i<${#PRED_STEPS[@]};i++)); do
     python3 run_swarmnet.py --train --data-dir=$DATA_DIR/$DATA_SET --config=$CONFIG --log-dir=$LOG_DIR --epochs=${EPOCHS[$i]} --pred-steps=${PRED_STEPS[$i]} --batch-size=${BATCH_SIZES[$i]} #--max-padding=$PADDING
+    echo "Training with $DATA_SET and ${PRED_STEPS[$i]} pred_steps over ${EPOCHS[$i]} epochs done" >> $LOG_DIR/train_log.txt
 done
 
 
@@ -31,5 +32,8 @@ PADDING=11
 
 for ((i=0;i<${#PRED_STEPS[@]};i++)); do
     python3 run_swarmnet.py --train --data-dir=$DATA_DIR/$DATA_SET --config=$CONFIG --log-dir=$LOG_DIR --epochs=${EPOCHS[$i]} --pred-steps=${PRED_STEPS[$i]} --batch-size=${BATCH_SIZES[$i]} --max-padding=$PADDING
+    echo "Tuning with $DATA_SET and ${PRED_STEPS[$i]} pred_steps over ${EPOCHS[$i]} epochs done" >> $LOG_DIR/train_log.txt
 done
+
+echo "Complete!" >> $LOG_DIR/train_log.txt
 cd ..

@@ -1,7 +1,7 @@
 cd swarmnet
 
-BATCH_SIZE=${1:-512}
-ID=${2:-""}
+BATCH_SIZE=512
+ID=${1:-""}
 
 CONFIG=../config_edge.json 
 LOG_DIR=../logs/boid/5_10_tune/edge_skip$ID

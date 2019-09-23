@@ -28,7 +28,7 @@
     },
     "node_decoder": {
         "hidden_units": [
-            256,
+            128,
             128
         ],
         "dropout": 0.0,
@@ -36,5 +36,5 @@
         "kernel_l2": 0.001
     },
     "learning_rate": 0.001,
-    "lambda": 1.0
+    "lambda": 0.0
 }

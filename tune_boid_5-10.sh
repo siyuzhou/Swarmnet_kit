@@ -4,19 +4,19 @@ git pull
 
 ID=${1:-""}
 
-BATCH_SIZE=512
+BATCH_SIZE=1024
 
 DATA_DIR=../data/boid/
 CONFIG=../config_edge.json 
-LOG_DIR=../logs/boid/10_0/edge_skip$ID
-TUNE_LOG_DIR=../logs/boid/10_20_forget/edge_skip$ID
+LOG_DIR=../logs/boid/5_0/edge_skip$ID
+TUNE_LOG_DIR=../logs/boid/5_10_forget/edge_skip$ID
 cp -r $LOG_DIR $TUNE_LOG_DIR
 
 
 PRED_STEPS=( 1 3 5 10 )
 EPOCHS=( 5 3 2 2 )
-BATCH_SIZES=( $BATCH_SIZE $(($BATCH_SIZE / 2)) $(($BATCH_SIZE / 4)) $(($BATCH_SIZE / 8)) )
-DATA_SET=20_0
+BATCH_SIZES=( $BATCH_SIZE $(($BATCH_SIZE / 2)) $(($BATCH_SIZE / 2)) $(($BATCH_SIZE / 4)) )
+DATA_SET=10_0
 
 
 for ((i=0;i<${#PRED_STEPS[@]};i++)); do

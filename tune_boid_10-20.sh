@@ -9,8 +9,11 @@ BATCH_SIZE=512
 DATA_DIR=../data/boid/
 CONFIG=../config_edge.json 
 LOG_DIR=../logs/boid/10_0/edge_skip$ID
+
 TUNE_LOG_DIR=../logs/boid/10_20_forget/edge_skip$ID
-cp -r $LOG_DIR $TUNE_LOG_DIR
+mkdir -p TUNE_LOG_DIR
+cp -r $LOG_DIR/* $TUNE_LOG_DIR
+rm $TUNE_LOG_DIR/*.txt
 
 
 PRED_STEPS=( 1 3 5 10 )

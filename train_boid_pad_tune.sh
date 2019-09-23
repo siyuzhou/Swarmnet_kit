@@ -28,7 +28,9 @@ done
 BATCH_SIZE=1024
 
 TUNE_LOG_DIR=../logs/boid/5_10_tune/edge_skip$ID
-cp -r $LOG_DIR $TUNE_LOG_DIR
+mkdir -p TUNE_LOG_DIR
+cp -r $LOG_DIR/* $TUNE_LOG_DIR
+rm $TUNE_LOG_DIR/*.txt
 
 PRED_STEPS=( 1 3 5 10 )
 EPOCHS=( 5 3 2 2 )

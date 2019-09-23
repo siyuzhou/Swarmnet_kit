@@ -3,16 +3,16 @@
     "skip_zero": true,
     "cnn": {
         "filters": [
+            32,
             64,
-            128,
-            256
+            128
         ]
     },
     "edge_encoder": {
         "hidden_units": [
-            512,
-            512,
-            256
+            256,
+            256,
+            128
         ],
         "dropout": 0.0,
         "batch_norm": false,
@@ -20,8 +20,7 @@
     },
     "node_encoder": {
         "hidden_units": [
-            256,
-            256
+            128
         ],
         "dropout": 0.0,
         "batch_norm": false,
@@ -29,8 +28,8 @@
     },
     "node_decoder": {
         "hidden_units": [
-            512,
-            256
+            256,
+            128
         ],
         "dropout": 0.0,
         "batch_norm": false,
